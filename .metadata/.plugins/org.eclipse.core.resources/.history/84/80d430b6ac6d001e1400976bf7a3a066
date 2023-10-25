@@ -1,0 +1,20 @@
+package Project;
+
+public class test
+{
+	public static void main(String[] args) 
+	{
+		String s ="swa#stik?ku#mar?moha#patra?" ;//We have to print
+												//Firstname -swastik
+												//second name :-kumar
+												//last name :- mohapatra
+		String firstname= s.split("?")[0];
+		String secondname= s.split("?")[1];
+		String thirdname= s.split("?")[2];
+		System.out.println(firstname.replace("#", " "));
+		System.out.println(secondname);
+		System.out.println(thirdname);
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+package Project;
+
+public class test
+{
+	public static void main(String[] args) 
+	{
+		int x=555;
+		String s = String.valueOf(x);
+		System.out.println(s);
+	}
+
+}

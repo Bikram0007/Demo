@@ -1,0 +1,66 @@
+package pom_class;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import generics.ExcelLibrary;
+import generics.Helper;
+
+public class  ActitimeLoginPage extends ExcelLibrary
+{
+	WebDriver driver;
+	//Declration
+	
+	@FindBy(id="username")
+	private WebElement usernameTextfield;
+	
+	@FindBy (name="pwd")
+	private WebElement passwordTextfield;
+	
+	@FindBy (id="loginButton")
+	private WebElement loginButton;
+
+	@FindBy(xpath="//a[.='Forgot your password?']")
+	private WebElement forgotyourpasswordLink;
+	
+	@FindBy(xpath="//a[.='actiTIME Inc.']")
+	private WebElement actiTimeIncLink;
+	
+	//intialization
+	
+	public ActitimeLoginPage ( WebDriver driver)
+	
+	{
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	//utilization
+	
+	public void loginmethod() throws Exception
+	{
+		Helper.highlightelement(driver, usernameTextfield);
+		usernameTextfield.sendKeys(ExcelLibrary.getcellvalue(sheet_name, 0, 0));
+		Helper.highlightelement(driver, passwordTextfield);
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(sheet_name, 0, 1));
+		Helper.highlightelement(driver, loginButton);
+		loginButton.click();
+		
+	}
+	
+	public void ForgotPasswordMethod()
+	
+	{
+		forgotyourpasswordLink.click();
+		
+	}
+	public void actitimeincMethod()
+	{
+		actiTimeIncLink.click();
+	}
+	
+
+ }
+
